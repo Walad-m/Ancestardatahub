@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ancestar Datahub</title>
+    <meta name="description" content="Sign in to your Ancestar Datahub account">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Main nav row -->
+            <div class="nav-main">
+                <div class="nav-brand">
+                    <i class="fas fa-database brand-icon"></i>
+                    <span class="brand-text">Ancestar Datahub</span>
+                </div>
+                
+                <div class="nav-actions-desktop">
+                    <button class="theme-toggle" data-action="toggle-theme" aria-label="Toggle theme">
+                        <i class="fas fa-moon" data-theme-icon></i>
+                    </button>
+                    <a href="index.html" class="btn btn-outline">Back to Home</a>
+                </div>
+
+                <div class="nav-mobile-controls">
+                    <button class="theme-toggle" data-action="toggle-theme" aria-label="Toggle theme">
+                        <i class="fas fa-moon" data-theme-icon></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile actions row -->
+            <div class="nav-actions-mobile" data-mobile-actions>
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Form -->
+    <div class="form-container">
+        <div class="form-card">
+            <div class="nav-brand centered-content section-spacing">
+                <i class="fas fa-database brand-icon"></i>
+                <span class="brand-text">Ancestar Datahub</span>
+            </div>
+            
+            <h1 class="form-title">Welcome Back</h1>
+            <p class="form-subtitle">Sign in to your account to continue</p>
+
+            <form data-form="login">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" data-field="email" class="form-input" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" data-field="password" class="form-input" required placeholder="Enter your password">
+                </div>
+
+                <button type="submit" data-submit="login" class="btn btn-primary form-submit">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign In
+                </button>
+            </form>
+
+            <div class="form-footer">
+                Don't have an account? <a href="signup.html">Create one here</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

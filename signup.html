@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Ancestar Datahub</title>
+    <meta name="description" content="Create your Ancestar Datahub account">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Main nav row -->
+            <div class="nav-main">
+                <div class="nav-brand">
+                    <i class="fas fa-database brand-icon"></i>
+                    <span class="brand-text">Ancestar Datahub</span>
+                </div>
+                
+                <div class="nav-actions-desktop">
+                    <button class="theme-toggle" data-action="toggle-theme" aria-label="Toggle theme">
+                        <i class="fas fa-moon" data-theme-icon></i>
+                    </button>
+                    <a href="index.html" class="btn btn-outline">Back to Home</a>
+                </div>
+
+                <div class="nav-mobile-controls">
+                    <button class="theme-toggle" data-action="toggle-theme" aria-label="Toggle theme">
+                        <i class="fas fa-moon" data-theme-icon></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile actions row -->
+            <div class="nav-actions-mobile" data-mobile-actions>
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Signup Form -->
+    <div class="form-container">
+        <div class="form-card">
+            <div class="nav-brand centered-content section-spacing">
+                <i class="fas fa-database brand-icon"></i>
+                <span class="brand-text">Ancestar Datahub</span>
+            </div>
+            
+            <h1 class="form-title">Create Account</h1>
+            <p class="form-subtitle">Join thousands of satisfied customers</p>
+
+            <form data-form="signup">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" name="name" data-field="name" class="form-input" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" data-field="email" class="form-input" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" data-field="password" class="form-input" required placeholder="Create a password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" data-field="confirmPassword" class="form-input" required placeholder="Confirm your password">
+                </div>
+
+                <button type="submit" data-submit="signup" class="btn btn-primary form-submit">
+                    <i class="fas fa-user-plus"></i>
+                    Create Account
+                </button>
+            </form>
+
+            <div class="form-footer">
+                Already have an account? <a href="login.html">Sign in here</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

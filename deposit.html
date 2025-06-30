@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit - Ancestar Datahub</title>
+    <meta name="description" content="Add funds to your wallet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Main nav row -->
+            <div class="nav-main">
+                <div class="nav-brand">
+                    <i class="fas fa-database brand-icon"></i>
+                    <span class="brand-text">Ancestar Datahub</span>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="deposit.html" class="nav-link">Deposit</a>
+                    <a href="transactions.html" class="nav-link">Transactions</a>
+                </div>
+
+                <div class="nav-actions-desktop">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="index.html" class="btn btn-danger">Logout</a>
+                </div>
+
+                <div class="nav-mobile-controls">
+                    <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile actions row -->
+            <div class="nav-actions-mobile" id="navActionsMobile">
+                <a href="index.html" class="btn btn-danger">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Deposit Content -->
+    <main class="dashboard">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Deposit Funds</h1>
+                <p class="dashboard-subtitle">Add money to your wallet to purchase data bundles</p>
+            </div>
+
+            <div class="grid-responsive deposit-grid">
+                <!-- Deposit Form -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-credit-card card-icon"></i>
+                            <h3 class="card-title">Add Funds</h3>
+                        </div>
+                    </div>
+
+                    <form id="depositForm">
+                        <div class="form-group">
+                            <label for="amount" class="form-label">Amount (₵)</label>
+                            <input type="number" id="amount" class="form-input" required 
+                                   placeholder="Enter amount" step="0.01" min="5" max="10000">
+                            <small style="color: var(--text-muted); margin-top: 0.5rem; display: block;">
+                                Minimum deposit: ₵5.00
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="method" class="form-label">Payment Method</label>
+                            <select id="method" class="form-input" required>
+                                <option value="">Select Payment Method</option>
+                                <option value="mobile-money">Mobile Money</option>
+                                <option value="bank-transfer">Bank Transfer</option>
+                                <option value="credit-card">Credit/Debit Card</option>
+                            </select>
+                        </div>
+
+                        <div id="paymentDetails" style="display: none; margin-bottom: 1.5rem;">
+                            <!-- Payment details will be populated based on method -->
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-plus"></i>
+                            Deposit Now
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Payment Information -->
+                <div class="dashboard-card payment-info-card">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-info-circle card-icon"></i>
+                            <h3 class="card-title">Payment Information</h3>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <!-- Mobile Money -->
+                        <div class="payment-method-card" style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-mobile-alt"></i>
+                                Mobile Money
+                            </h4>
+                            <div style="color: var(--text-secondary); line-height: 1.6;">
+                                <p><strong>MTN MoMo:</strong> 0542-408-856</p>
+                                <p><strong>Vodafone Cash:</strong> 0542-408-856</p>
+                                <p><strong>AirtelTigo Money:</strong> 0542-408-856</p>
+                                <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem;">
+                                    Send payment to any of the numbers above and enter transaction ID in the form.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Bank Transfer -->
+                        <div class="payment-method-card" style="border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fas fa-university"></i>
+                                Bank Transfer
+                            </h4>
+                            <div style="color: var(--text-secondary); line-height: 1.6;">
+                                <p><strong>Bank:</strong> GCB Bank</p>
+                                <p><strong>Account Name:</strong> Ancestar Datahub</p>
+                                <p><strong>Account Number:</strong> 1234567890</p>
+                                <p><strong>Sort Code:</strong> 070101</p>
+                            </div>
+                        </div>
+
+                        <!-- Support -->
+                        <div style="text-align: center; padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius);">
+                            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                                Need help with your deposit?
+                            </p>
+                            <a href="https://wa.me/233542408856?text=Hi, I need help with my deposit" 
+                               target="_blank" 
+                               class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                Contact Support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Deposit Amounts -->
+            <div class="dashboard-card" style="margin-top: 2rem;">
+                <div class="card-header">
+                    <div style="display: flex; align-items: center;">
+                        <i class="fas fa-bolt card-icon"></i>
+                        <h3 class="card-title">Quick Deposit</h3>
+                    </div>
+                </div>
+                <div class="quick-deposit-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem;">
+                    <button class="btn btn-outline" onclick="setDepositAmount(10)">₵10</button>
+                    <button class="btn btn-outline" onclick="setDepositAmount(20)">₵20</button>
+                    <button class="btn btn-outline" onclick="setDepositAmount(50)">₵50</button>
+                    <button class="btn btn-outline" onclick="setDepositAmount(100)">₵100</button>
+                    <button class="btn btn-outline" onclick="setDepositAmount(200)">₵200</button>
+                    <button class="btn btn-outline" onclick="setDepositAmount(500)">₵500</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        function setDepositAmount(amount) {
+            document.getElementById('amount').value = amount;
+        }
+
+        // Show payment details based on selected method
+        document.getElementById('method')?.addEventListener('change', function() {
+            const paymentDetails = document.getElementById('paymentDetails');
+            const method = this.value;
+            
+            if (method === 'mobile-money') {
+                paymentDetails.innerHTML = `
+                    <div class="form-group">
+                        <label for="transactionId" class="form-label">Transaction ID</label>
+                        <input type="text" id="transactionId" class="form-input" required 
+                               placeholder="Enter MoMo transaction ID">
+                        <small style="color: var(--text-muted); margin-top: 0.5rem; display: block;">
+                            Send money to 0542-408-856 and enter the transaction ID here
+                        </small>
+                    </div>
+                `;
+                paymentDetails.style.display = 'block';
+            } else if (method === 'bank-transfer') {
+                paymentDetails.innerHTML = `
+                    <div class="form-group">
+                        <label for="reference" class="form-label">Transfer Reference</label>
+                        <input type="text" id="reference" class="form-input" required 
+                               placeholder="Enter bank transfer reference">
+                        <small style="color: var(--text-muted); margin-top: 0.5rem; display: block;">
+                            Transfer to GCB Bank account and enter reference number
+                        </small>
+                    </div>
+                `;
+                paymentDetails.style.display = 'block';
+            } else if (method === 'credit-card') {
+                paymentDetails.innerHTML = `
+                    <div style="padding: 1rem; background: var(--bg-secondary); border-radius: var(--border-radius); text-align: center;">
+                        <i class="fas fa-info-circle" style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                        <p style="color: var(--text-secondary);">
+                            Card payments are processed securely. You will be redirected to our payment processor.
+                        </p>
+                    </div>
+                `;
+                paymentDetails.style.display = 'block';
+            } else {
+                paymentDetails.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

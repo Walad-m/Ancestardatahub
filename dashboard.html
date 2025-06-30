@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Ancestar Datahub</title>
+    <meta name="description" content="Manage your data bundles and account">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Main nav row -->
+            <div class="nav-main">
+                <div class="nav-brand">
+                    <i class="fas fa-database brand-icon"></i>
+                    <span class="brand-text">Ancestar Datahub</span>
+                </div>
+                
+                <div class="nav-menu" data-mobile-menu>
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="deposit.html" class="nav-link">Deposit</a>
+                    <a href="transactions.html" class="nav-link">Transactions</a>
+                </div>
+
+                <div class="nav-actions-desktop">
+                    <button class="theme-toggle" data-action="toggle-theme" aria-label="Toggle theme">
+                        <i class="fas fa-moon" data-theme-icon></i>
+                    </button>
+                    <a href="index.html" class="btn btn-danger">Logout</a>
+                </div>
+
+                <div class="nav-mobile-controls">
+                    <button class="theme-toggle" data-action="toggle-theme" aria-label="Toggle theme">
+                        <i class="fas fa-moon" data-theme-icon></i>
+                    </button>
+                    <button class="mobile-menu-toggle" data-action="toggle-mobile-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile actions row -->
+            <div class="nav-actions-mobile" data-mobile-actions>
+                <a href="index.html" class="btn btn-danger">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Welcome back, <span data-user="name">User</span>!</h1>
+                <p class="dashboard-subtitle">Manage your data bundles and account from here</p>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Wallet Balance -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-header-content">
+                            <i class="fas fa-wallet card-icon"></i>
+                            <h3 class="card-title">Wallet Balance</h3>
+                        </div>
+                    </div>
+                    <div class="balance-amount" data-user="balance">₵0.00</div>
+                    <div class="balance-currency">Ghanaian Cedi</div>
+                    <a href="deposit.html" class="btn btn-primary full-width-button button-with-top-margin">
+                        <i class="fas fa-plus"></i>
+                        Add Funds
+                    </a>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-header-content">
+                            <i class="fas fa-bolt card-icon"></i>
+                            <h3 class="card-title">Quick Actions</h3>
+                        </div>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="action-button" data-action="show-buy-data">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Buy Data</span>
+                        </button>
+                        <a href="deposit.html" class="action-button">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Deposit</span>
+                        </a>
+                        <a href="transactions.html" class="action-button">
+                            <i class="fas fa-history"></i>
+                            <span>Transactions</span>
+                        </a>
+                        <button class="action-button" data-action="show-afa">
+                            <i class="fas fa-user-plus"></i>
+                            <span>AFA Registration</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="dashboard-card full-width-section">
+                    <div class="card-header">
+                        <div class="card-header-content">
+                            <i class="fas fa-history card-icon"></i>
+                            <h3 class="card-title">Recent Transactions</h3>
+                        </div>
+                        <a href="transactions.html" class="btn btn-outline">View All</a>
+                    </div>
+                    
+                    <!-- Transaction Cards -->
+                    <div class="transaction-cards">
+                        <div class="transaction-card">
+                            <div class="transaction-header">
+                                <div class="transaction-id">TXN001</div>
+                                <span class="status-badge status-success">Completed</span>
+                            </div>
+                            <div class="transaction-details">
+                                <div class="transaction-type">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Data Purchase
+                                </div>
+                                <div class="transaction-amount">₵15.00</div>
+                            </div>
+                            <div class="transaction-footer">
+                                <div class="transaction-date">Today</div>
+                                <button class="btn btn-outline btn-small" data-action="view-transaction" data-transaction-id="TXN001">
+                                    <i class="fas fa-eye"></i>
+                                    View
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="transaction-card">
+                            <div class="transaction-header">
+                                <div class="transaction-id">TXN002</div>
+                                <span class="status-badge status-success">Completed</span>
+                            </div>
+                            <div class="transaction-details">
+                                <div class="transaction-type">
+                                    <i class="fas fa-plus"></i>
+                                    Wallet Deposit
+                                </div>
+                                <div class="transaction-amount">₵100.00</div>
+                            </div>
+                            <div class="transaction-footer">
+                                <div class="transaction-date">Yesterday</div>
+                                <button class="btn btn-outline btn-small" data-action="view-transaction" data-transaction-id="TXN002">
+                                    <i class="fas fa-eye"></i>
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buy Data Form (Hidden by default) -->
+            <div data-section="buy-data" class="dashboard-card hidden-section">
+                <div class="card-header">
+                    <div class="card-header-content">
+                        <i class="fas fa-shopping-cart card-icon"></i>
+                        <h3 class="card-title">Buy Data Bundle</h3>
+                    </div>
+                    <button class="btn btn-outline cancel-button" data-action="hide-buy-data">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                </div>
+                
+                <form data-form="purchase">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="network" class="form-label">Network Provider</label>
+                            <select id="network" name="network" data-field="network" class="form-input" required>
+                                <option value="">Select Network</option>
+                                <option value="MTN">MTN</option>
+                                <option value="AT">AT</option>
+                                <option value="TELECEL">TELECEL</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bundle" class="form-label">Data Bundle</label>
+                            <select id="bundle" name="bundle" data-field="bundle" class="form-input" required>
+                                <option value="">Select Bundle</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" data-field="phone" class="form-input" required placeholder="0542408856">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="amount" class="form-label">Amount (₵)</label>
+                            <input type="number" id="amount" name="amount" data-field="amount" class="form-input" required placeholder="15.00" step="0.01" min="0">
+                        </div>
+                    </div>
+
+                    <button type="submit" data-submit="purchase" class="btn btn-primary full-width-button button-with-top-margin">
+                        <i class="fas fa-shopping-cart"></i>
+                        Purchase Data
+                    </button>
+                </form>
+            </div>
+
+            <!-- AFA Registration Form (Hidden by default) -->
+            <div data-section="afa" class="dashboard-card hidden-section">
+                <div class="card-header">
+                    <div class="card-header-content">
+                        <i class="fas fa-user-plus card-icon"></i>
+                        <h3 class="card-title">AFA Registration</h3>
+                    </div>
+                    <button class="btn btn-outline cancel-button" data-action="hide-afa">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                </div>
+                
+                <div class="info-container">
+                    <h4 class="info-title">
+                        <i class="fas fa-info-circle"></i>
+                        AFA Registration Service
+                    </h4>
+                    <p class="info-content">
+                        Register for AFA services quickly and securely. Complete the form below or contact our support team for assistance.
+                    </p>
+                </div>
+
+                <div class="centered-content">
+                    <a href="https://wa.me/233542408856?text=Hi, I want to register for AFA services" 
+                       target="_blank" 
+                       class="btn btn-whatsapp btn-large">
+                        <i class="fab fa-whatsapp"></i>
+                        Contact Support for AFA Registration
+                    </a>
+                </div>
+            </div>
+
+            <!-- Transaction Details Modal (Hidden by default) -->
+            <div data-modal="transaction" class="modal hidden-section">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Transaction Details</h3>
+                        <button class="btn btn-outline btn-small" data-action="close-modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body" data-modal-content="transaction">
+                        <!-- Transaction details will be populated -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
